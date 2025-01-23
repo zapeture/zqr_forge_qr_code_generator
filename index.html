@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Create custom QR codes instantly with ZQR Forge. Free, fast, and easy to use QR code generator for websites, social media, and more.">
+	<meta name="keywords" content="QR code generator, QR codes, ZQR Forge, create QR code, Fortune Zviregei">
+	<meta name="author" content="Fortune Zviregei">
+	<meta http-equiv="X-Content-Type-Options" content="nosniff">
+	<meta http-equiv="X-Frame-Options" content="DENY">
+	<meta http-equiv="X-XSS-Protection" content="1; mode=block">
+	<meta http-equiv="Content-Security-Policy" 
+		content="default-src 'self';
+				 script-src 'self' https://cdn.tailwindcss.com https://cdnjs.cloudflare.com 'unsafe-inline';
+				 style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+				 font-src 'self' https://fonts.gstatic.com;
+				 img-src 'self' data: blob:;
+				 connect-src 'self';
+				 frame-src 'none';
+				 object-src 'none';
+				 base-uri 'self';">
+	<title>ZQR Forge - Professional QR Code Generator</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					fontFamily: {
+						sans: ['Poppins', 'sans-serif'],
+					},
+					colors: {
+						primary: '#4F46E5',
+						secondary: '#3730A3',
+					},
+					animation: {
+						'gradient': 'gradient 8s ease infinite',
+						'bounce-slight': 'bounce-slight 1s ease-in-out infinite',
+					},
+					keyframes: {
+						gradient: {
+							'0%, 100%': {
+								'background-size': '200% 200%',
+								'background-position': 'left center'
+							},
+							'50%': {
+								'background-size': '200% 200%',
+								'background-position': 'right center'
+							},
+						},
+						'bounce-slight': {
+							'0%, 100%': {
+								transform: 'translateY(0)'
+							},
+							'50%': {
+								transform: 'translateY(-5px)'
+							}
+						}
+					},
+				},
+			},
+		};
+	</script>
+</head>
+
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 flex flex-col min-h-screen">
+	<header class="bg-gradient-to-r from-primary via-secondary to-primary p-6 mb-12 shadow-lg animate-gradient bg-[length:200%_auto]">
+		<div class="container mx-auto">
+			<h1 class="text-white text-3xl font-bold flex items-center gap-2">
+				<span class="text-4xl font-extrabold">ZQR</span>
+				<span class="text-gray-200">Forge</span>
+			</h1>
+			<p class="text-gray-200 mt-2">Create powerful QR codes instantly</p>
+		</div>
+	</header>
+	<main class="container mx-auto p-4 flex-grow">
+		<div class="flex flex-col-reverse align-center justify-center min-h-[80vh] m-auto md:max-w-5xl md:flex-row md:gap-12">
+			<div class="w-full md:w-1/2 bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+				<h2 class="text-3xl font-bold text-gray-800 animate-bounce-slight">Create Your QR Code</h2>
+				<p class="text-gray-600 py-4 text-lg">Generate custom QR codes for your website, social media, or any URL.</p>
+
+				<p id="qr-message" class="text-gray-600"></p>
+
+				<form id="qr-form" class="flex flex-col gap-5 mt-6">
+					<input id="qr-input" type="url"
+						class="w-full p-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all hover:border-primary/30"
+						placeholder="Enter your URL here">
+					<div class="flex flex-col gap-2">
+						<label for="qr-size" class="text-gray-700">QR Code Size</label>
+						<select id="qr-size"
+							class="w-full p-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all">
+							<option value="100">100x100</option>
+							<option value="200">200x200</option>
+							<option value="300">300x300</option>
+							<option value="400">400x400</option>
+							<option value="500" selected>500x500</option>
+							<option value="600">600x600</option>
+							<option value="700">700x700</option>
+							<option value="800">800x800</option>
+							<option value="900">900x900</option>
+							<option value="1000">1000x1000</option>
+						</select>
+					</div>
+					<button id="qr-button" type="submit" 
+						class="bg-primary hover:bg-secondary text-white p-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/20">
+						Generate QR Code
+					</button>
+				</form>
+			</div>
+			<div class="w-full md:w-1/2">
+				<div id="qr-result" class="w-full flex flex-col items-center justify-center text-center bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+					<!-- Spinner -->
+					<div id="qr-spinner" class="hidden w-12 h-12 border-4 border-gray-200 border-t-primary rounded-full animate-spin"></div>
+					<!-- QR Code -->
+					<div id="qr-code" class="w-full p-4"></div>
+					<!-- Download Button -->
+					<button id="download-btn" 
+						class="hidden mt-6 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg hover:shadow-green-500/20">
+						Download QR Code
+					</button>
+				</div>
+			</div>
+		</div>
+	</main>
+	
+	<footer class="bg-gray-900 text-gray-300 py-6 mt-12">
+		<div class="container mx-auto px-4">
+			<div class="flex flex-col md:flex-row justify-between items-center">
+				<div class="flex items-center gap-2 mb-4 md:mb-0">
+					<span class="text-2xl font-bold text-white">ZQR</span>
+					<span class="text-gray-400">Forge</span>
+				</div>
+				<p class="text-sm text-center md:text-right">
+					© <span id="current-year"></span> All rights reserved. Created by <a href="https://fortunezviregei.com/" target="_blank" class="text-primary hover:text-white transition-colors duration-300">Fortune Zviregei</a>
+				</p>
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.js"></script>
+	<script src="./script.js"></script>
+	<script>
+		document.getElementById('current-year').textContent = new Date().getFullYear();
+	</script>
+</body>
+
+</html>
