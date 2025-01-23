@@ -1,8 +1,15 @@
 {
   "name": "zqr_forge_qr_code_generator",
   "version": "1.0.0",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "keywords": [
+    "qr",
+    "qrcode",
+    "qrcode-generator",
+    "qrforge",
+    "qrforge-qrcode-generator",
+    "qrforge-qrcode-generator-library"
+  ],
+  "author": "Fortune Zviregei",
+  "license": "MIT",
+  "description": "QR Code Generator using qrcode-generator library"
 }
