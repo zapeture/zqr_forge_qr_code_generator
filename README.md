@@ -1,9 +1,8 @@
 # ZQR Forge - Professional QR Code Generator
 
-![ZQR Forge Banner](./assets/banner.png)
+![ZQR Forge Banner](https://res.cloudinary.com/zapeture/image/upload/v1737676698/MISC/zqr_forge_qr_code_generator_ol8i55.png)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)]()
 
 ## 🚀 Overview
 
@@ -17,9 +16,7 @@ ZQR Forge is a modern, fast, and user-friendly QR code generator built with vani
 - 📏 Multiple size options (100x100 to 1000x1000)
 - 💾 Easy download functionality
 - 🔒 Secure input handling
-- 🌐 Works offline
 - ✅ Input validation
-- 🧪 Unit tested
 
 ## 🛠️ Technologies Used
 
@@ -69,11 +66,8 @@ Give a ⭐️ if this project helped you!
 
 ## 📸 Screenshots
 
-![Screenshot 1](./assets/screenshot1.png) <!-- Add actual screenshots of your application -->
-![Screenshot 2](./assets/screenshot2.png)
+![Screenshot 1](https://res.cloudinary.com/zapeture/image/upload/v1737676698/MISC/zqr_forge_qr_code_generator_ol8i55.png)
 
 ## 🙏 Acknowledgments
 
-- QRCode Generator Library
-- Tailwind CSS Team
-- Jest Testing Framework
+- [QRCode Generator Library](https://github.com/kazuhikoarase/qrcode-generator)
