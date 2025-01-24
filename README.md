@@ -23,12 +23,11 @@ ZQR Forge is a modern, fast, and user-friendly QR code generator built with vani
 - Vanilla JavaScript
 - HTML5
 - Tailwind CSS
-- Jest (Testing)
 - QRCode Generator Library
 
 ## 🚀 Live Demo
 
-Check out the live demo: [ZQR Forge Demo](https://your-demo-link.com)
+Check out the live demo: [ZQR Forge Demo](https://zqr-forge-qr-code-generator.fortunezviregei.com)
 
 ## 🏗️ Installation
 
